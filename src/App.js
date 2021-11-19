@@ -8,7 +8,24 @@ function App() {
 				<h1 className='h1'>Dictionary App</h1>
 			</header>
 			<Dictionary />
-			<footer>this is a footer</footer>
+			<footer>
+				Coded by{' '}
+				<a
+					href='https://miwayagi.com/'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					Miwa Kaur
+				</a>
+				. View{' '}
+				<a
+					href='https://github.com/peeweemiwie/dictionary-react'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					GitHub
+				</a>{' '}
+			</footer>
 		</div>
 	);
 }
