@@ -1,0 +1,6 @@
+@use './styles' as *;
+.App {
+	font-size: $font-size-sm;
+	margin: 0 auto;
+	max-width: 80rem;
+}
