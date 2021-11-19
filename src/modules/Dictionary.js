@@ -1,11 +1,17 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const Dictionary = () => {
 	const [keyword, setKeyword] = useState('');
-
+	const [data, setData] = useState({});
+	const handleResponse = (response) => {
+		setData(response.data[0]);
+		console.log(response.data[0]);
+	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(keyword);
+		const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+		axios.get(apiUrl).then(handleResponse);
 	};
 
 	const handleKeywordChange = (event) => {
@@ -17,6 +23,9 @@ const Dictionary = () => {
 			<form onSubmit={handleSubmit}>
 				<input type='search' onChange={handleKeywordChange} />
 			</form>
+			<div>
+				<pre>{JSON.stringify(data)}</pre>
+			</div>
 		</div>
 	);
 };
