@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import Meaning from './Meaning';
+import Results from './Results';
 const Dictionary = () => {
 	const [keyword, setKeyword] = useState('');
 	const [data, setData] = useState(null);
@@ -23,7 +23,7 @@ const Dictionary = () => {
 			<form onSubmit={handleSubmit}>
 				<input type='search' onChange={handleKeywordChange} />
 			</form>
-			<div>{data != null && <Meaning data={data} />}</div>
+			<div>{data != null && <Results data={data} />}</div>
 		</div>
 	);
 };
