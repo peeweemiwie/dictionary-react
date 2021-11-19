@@ -2,5 +2,8 @@
 .App {
 	font-size: $font-size-sm;
 	margin: 0 auto;
-	max-width: 80rem;
+	width: 100vw;
+	@include respond-above(sm) {
+		max-width: 80rem;
+	}
 }
