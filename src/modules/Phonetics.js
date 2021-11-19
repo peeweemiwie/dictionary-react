@@ -1,5 +1,4 @@
 const Phonetics = (props) => {
-	console.log(props.data);
 	return props.data.map((item, index) => {
 		return (
 			<div className='Phonetics'>
