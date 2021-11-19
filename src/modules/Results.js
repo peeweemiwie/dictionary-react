@@ -1,6 +1,7 @@
 import React from 'react';
 import MeaningArray from './MeaningArray';
-const Meaning = (props) => {
+
+const Results = (props) => {
 	// console.log('props.data', props.data);
 	const data = props.data;
 	const word = data.word;
@@ -18,4 +19,4 @@ const Meaning = (props) => {
 	);
 };
 
-export default Meaning;
+export default Results;
