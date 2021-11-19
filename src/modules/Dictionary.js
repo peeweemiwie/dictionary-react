@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-
+import Meaning from './Meaning';
 const Dictionary = () => {
 	const [keyword, setKeyword] = useState('');
-	const [data, setData] = useState({});
+	const [data, setData] = useState(null);
 	const handleResponse = (response) => {
 		setData(response.data[0]);
-		console.log(response.data[0]);
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -24,9 +23,7 @@ const Dictionary = () => {
 			<form onSubmit={handleSubmit}>
 				<input type='search' onChange={handleKeywordChange} />
 			</form>
-			<div>
-				<pre>{JSON.stringify(data)}</pre>
-			</div>
+			<div>{data != null && <Meaning data={data} />}</div>
 		</div>
 	);
 };
