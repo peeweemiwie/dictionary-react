@@ -2,12 +2,44 @@
 
 .Dictionary {
 	.Form {
+		align-items: baseline;
+		background-color: rgba(var.$gray, 0.2);
+		border-bottom: 1px solid var.$white;
+		display: flex;
+		.container-input-label {
+			align-items: flex-end;
+			display: flex;
+			height: 5rem;
+			position: relative;
+			width: calc(100% - 3rem);
+		}
+		.label {
+			position: absolute;
+			left: 10px;
+			top: 20px;
+			transform: translateY(0);
+			transition: transform 300ms ease-in-out;
+		}
+		.icon {
+			font-size: 3rem;
+		}
 		.input-search {
-			background-color: var.$gray;
+			background-color: transparent;
 			border: 0;
-			border-bottom: 1px solid var.$white;
+			color: var.$white;
+			font-size: var.$font-size-md;
 			height: 4rem;
+			padding-left: 1rem;
 			width: 100%;
+			&:focus {
+				background-color: var.$dark-gray;
+				outline: transparent;
+			}
+		}
+		&[data-focus='true'] {
+			.label {
+				transform: translateY(-3rem);
+			}
 		}
 	}
 }

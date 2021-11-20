@@ -1,9 +1,3 @@
 @use '../styles/variables' as var;
 .Synonyms {
-	.synonym {
-		border: 1px solid var.$primary;
-		border-radius: var.$xl;
-		padding: 0 1rem;
-		margin: 0.5rem;
-	}
 }

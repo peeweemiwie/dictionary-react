@@ -1,8 +1,14 @@
+import './Phonetics.scss';
+
 const Phonetics = (props) => {
 	return props.data.map((item, index) => {
 		return (
 			<div className='Phonetics'>
-				<div className='text'>[{item.text}]</div>
+				<div className='text'>
+					<span>[</span>
+					{item.text}
+					<span>]</span>
+				</div>
 				{item.audio && (
 					<figure className='audio'>
 						<audio controls src={item.audio}>

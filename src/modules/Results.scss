@@ -1,0 +1,9 @@
+@use '../styles/variables' as var;
+@use '../styles/base' as base;
+
+.Results {
+	.searched-word {
+		@extend .h2;
+		font-size: var.$font-size-lg;
+	}
+}

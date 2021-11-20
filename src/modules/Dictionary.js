@@ -8,18 +8,23 @@ const Dictionary = (props) => {
 	const [keyword, setKeyword] = useState(props.defaultKeyword);
 	const [data, setData] = useState(null);
 	const [loaded, setLoaded] = useState(false);
+	const [focus, setFocus] = useState(false);
 
 	const handleResponse = (response) => {
 		setData(response.data[0]);
 	};
 
+	const handleFocus = () => {
+		setFocus(true);
+	};
+
 	const sendRequest = () => {
+		// documentation: https://dictionaryapi.dev/
 		const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
 		axios.get(apiUrl).then(handleResponse);
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// documentation: https://dictionaryapi.dev/
 		sendRequest();
 	};
 
@@ -35,17 +40,20 @@ const Dictionary = (props) => {
 	if (loaded) {
 		return (
 			<div className='Dictionary'>
-				<form className='Form' onSubmit={handleSubmit}>
+				<form className='Form' onSubmit={handleSubmit} data-focus={focus}>
 					<div className='container-input-label'>
-						<label htmlFor='input-search'>Search for a word</label>
+						<label className='label' htmlFor='input-search'>
+							Search for a word
+						</label>
 						<input
 							className='input-search'
 							id='input-search'
 							type='search'
 							onChange={handleKeywordChange}
+							onFocus={handleFocus}
 						/>
 					</div>
-					<span className='material-icons-outlined'>search</span>
+					<span className='icon material-icons-outlined'>search</span>
 				</form>
 				{data && <Results data={data} />}
 			</div>

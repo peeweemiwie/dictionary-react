@@ -13,7 +13,25 @@
 			border-bottom: 0;
 		}
 		.dt {
+			font-family: 'Roboto Mono', monospace;
 			margin-bottom: 1rem;
+		}
+	}
+
+	//synonyms and antonyms
+	.container-words {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.word {
+		border-radius: var.$xl;
+		padding: 0 1rem;
+		margin: 0.5rem;
+		&.synonym {
+			border: 1px solid var.$primary;
+		}
+		&.antonym {
+			border: 1px solid var.$success;
 		}
 	}
 }
