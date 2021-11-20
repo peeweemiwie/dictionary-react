@@ -1,0 +1,47 @@
+@use '../styles/variables' as var;
+
+.Dictionary {
+	.Form {
+		align-items: flex-end;
+		background-color: rgba(var.$gray, 0.2);
+		border-bottom: 2px solid var.$gray;
+		display: flex;
+		.container-input-label {
+			align-items: flex-end;
+			display: flex;
+			height: 5rem;
+			position: relative;
+			width: calc(100% - 3rem);
+		}
+		.label {
+			position: absolute;
+			left: 10px;
+			top: 20px;
+			transform: translateY(0);
+			transition: transform 300ms ease-in-out;
+		}
+		.icon {
+			color: var.$light-gray;
+			font-size: 3rem;
+			margin: 0 1rem 0.4rem 0;
+		}
+		.input-search {
+			background-color: transparent;
+			border: 0;
+			color: var.$white;
+			font-size: var.$font-size-md;
+			height: 4rem;
+			padding-left: 1rem;
+			width: 100%;
+			&:focus {
+				background-color: var.$dark-gray;
+				outline: transparent;
+			}
+		}
+		&[data-focus='true'] {
+			.label {
+				transform: translateY(-3rem);
+			}
+		}
+	}
+}

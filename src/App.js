@@ -1,31 +1,14 @@
 import './App.scss';
 import Dictionary from './modules/Dictionary';
-
+import Footer from './modules/Footer';
 function App() {
 	return (
 		<div className='App'>
 			<header className='header'>
-				<h1 className='h1'>Dictionary App</h1>
+				<h1 className='h1'>What word do you want to look up?</h1>
 			</header>
-			<Dictionary />
-			<footer>
-				Coded by{' '}
-				<a
-					href='https://miwayagi.com/'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Miwa Kaur
-				</a>
-				. View{' '}
-				<a
-					href='https://github.com/peeweemiwie/dictionary-react'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					GitHub
-				</a>{' '}
-			</footer>
+			<Dictionary defaultKeyword='cat' />
+			<Footer />
 		</div>
 	);
 }

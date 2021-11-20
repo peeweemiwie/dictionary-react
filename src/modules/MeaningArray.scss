@@ -1,0 +1,11 @@
+@use '../styles/variables' as var;
+
+.MeaningArray {
+	background-color: var.$dark-gray;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	.part-of-speech {
+		font-size: var.$font-size-md;
+		padding: 0 1rem 1rem 1rem;
+	}
+}

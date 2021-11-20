@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=PT+Mono&family=Roboto+Mono:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500&display=swap');
 
 /* colors */
 $primary: #22b2da;
@@ -10,6 +10,7 @@ $dark: #0c1425;
 $white: #fff;
 $gray: #414141;
 $light-gray: lighten($gray, 60%);
+$dark-gray: #1a1a1a;
 $text: $dark;
 $day: #fffacd;
 $night: #000065;
@@ -29,6 +30,7 @@ $font-size-xs: 1.4rem;
 $sm: 3px;
 $md: 5px;
 $lg: 10px;
+$xl: 15px;
 $round: 50%;
 
 // This is shared between current and forecast modules

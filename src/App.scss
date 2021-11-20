@@ -1,6 +1,30 @@
-@use './styles' as *;
+@use './styles/variables' as var;
+@use './styles/breakpoints' as bp;
+
 .App {
-	font-size: $font-size-sm;
+	font-size: var.$font-size-sm;
 	margin: 0 auto;
-	max-width: 80rem;
+	width: 100vw;
+	@include bp.respond-above(sm) {
+		margin-top: 3rem;
+		max-width: 80rem;
+	}
+	.header {
+		margin-bottom: 2rem;
+		.h1 {
+			font-family: 'Roboto Mono', monospace;
+			font-weight: 200;
+			text-align: center;
+		}
+	}
+	.Footer {
+		text-align: center;
+		a {
+			color: var.$primary;
+			transition: color 300ms ease-in-out;
+			&:hover {
+				color: var.$white;
+			}
+		}
+	}
 }

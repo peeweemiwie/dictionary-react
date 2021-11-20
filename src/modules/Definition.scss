@@ -1,0 +1,37 @@
+@use '../styles/variables' as var;
+
+.Definition {
+	background-color: var.$body-bg;
+	border-radius: var.$lg;
+	margin-bottom: 1rem;
+	padding: 1rem 1rem 0 1rem;
+	.dl {
+		border-bottom: 1px solid var.$gray;
+		margin: 1rem 0;
+		padding-bottom: 1rem;
+		&:last-of-type {
+			border-bottom: 0;
+		}
+		.dt {
+			font-family: 'Roboto Mono', monospace;
+			margin-bottom: 1rem;
+		}
+	}
+
+	//synonyms and antonyms
+	.container-words {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.word {
+		border-radius: var.$xl;
+		padding: 0 1rem;
+		margin: 0.5rem;
+		&.synonym {
+			border: 1px solid var.$primary;
+		}
+		&.antonym {
+			border: 1px solid var.$success;
+		}
+	}
+}
