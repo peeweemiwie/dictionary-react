@@ -1,13 +1,10 @@
 import Definition from './Definition';
-import './MeaningArray.scss';
+import './Meaning.scss';
 
-const MeaningArray = (props) => {
+const Meaning = (props) => {
 	return props.array.map((meaning, index) => {
 		return (
-			<div
-				key={index + meaning.partOfSpeech}
-				className='MeaningArray container'
-			>
+			<div key={index + meaning.partOfSpeech} className='Meaning container'>
 				<div className='part-of-speech'>{meaning.partOfSpeech}</div>
 				{meaning.definitions.map((definition, index) => {
 					return <Definition index={index} definition={definition} />;
@@ -17,4 +14,4 @@ const MeaningArray = (props) => {
 	});
 };
 
-export default MeaningArray;
+export default Meaning;
