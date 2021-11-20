@@ -6,11 +6,16 @@
 	margin: 0 auto;
 	width: 100vw;
 	@include bp.respond-above(sm) {
+		margin-top: 3rem;
 		max-width: 80rem;
 	}
-	.h1 {
-		font-family: 'Roboto Mono', monospace;
-		font-weight: 200;
+	.header {
+		margin-bottom: 2rem;
+		.h1 {
+			font-family: 'Roboto Mono', monospace;
+			font-weight: 200;
+			text-align: center;
+		}
 	}
 	.Footer {
 		text-align: center;

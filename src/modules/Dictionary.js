@@ -40,7 +40,11 @@ const Dictionary = (props) => {
 	if (loaded) {
 		return (
 			<div className='Dictionary'>
-				<form className='Form' onSubmit={handleSubmit} data-focus={focus}>
+				<form
+					className='Form'
+					onSubmit={handleSubmit}
+					data-focus={focus || keyword.length > 0 ? true : false}
+				>
 					<div className='container-input-label'>
 						<label className='label' htmlFor='input-search'>
 							Search for a word
@@ -49,6 +53,7 @@ const Dictionary = (props) => {
 							className='input-search'
 							id='input-search'
 							type='search'
+							defaultValue={props.defaultKeyword}
 							onChange={handleKeywordChange}
 							onFocus={handleFocus}
 						/>

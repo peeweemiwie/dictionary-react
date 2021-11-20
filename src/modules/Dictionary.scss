@@ -2,9 +2,9 @@
 
 .Dictionary {
 	.Form {
-		align-items: baseline;
+		align-items: flex-end;
 		background-color: rgba(var.$gray, 0.2);
-		border-bottom: 1px solid var.$white;
+		border-bottom: 2px solid var.$gray;
 		display: flex;
 		.container-input-label {
 			align-items: flex-end;
@@ -21,7 +21,9 @@
 			transition: transform 300ms ease-in-out;
 		}
 		.icon {
+			color: var.$light-gray;
 			font-size: 3rem;
+			margin: 0 1rem 0.4rem 0;
 		}
 		.input-search {
 			background-color: transparent;
