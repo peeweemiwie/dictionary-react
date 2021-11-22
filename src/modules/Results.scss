@@ -7,4 +7,69 @@
 		font-size: var.$font-size-lg;
 		padding-left: 1rem;
 	}
+	.navigation {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2px;
+		.nav {
+			background-color: var.$gray;
+			border-bottom: 3px solid transparent;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			transition: border-bottom-color 100ms;
+			&[data-active='true'] {
+				border-bottom-color: var.$primary;
+			}
+			span {
+				align-self: center;
+			}
+		}
+	}
+	.Backdrop {
+		&[data-display-large='false'] {
+			display: none;
+		}
+		&[data-display-large='true'] {
+			background-color: rgba(black, 0.8);
+			display: block;
+			left: 0;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			width: 100vw;
+			z-index: 10;
+			.Figure {
+				left: 50%;
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				transform: translate3d(-50%, -50%, 0);
+				.figcaption {
+					font-size: var.$font-size-reg;
+					padding: 1rem 0;
+					text-align: center;
+				}
+			}
+			.btn-primary {
+				background-color: var.$primary;
+				border-radius: var.$lg;
+				color: var.$white;
+				margin-left: 1rem;
+				padding: 0.8rem 1rem;
+				text-decoration: none;
+				&.btn-close {
+					align-items: center;
+					display: flex;
+					justify-content: center;
+					right: 1rem;
+					top: 1rem;
+					position: absolute;
+					.icon {
+						font-size: var.$font-size-lg;
+					}
+				}
+			}
+		}
+	}
 }

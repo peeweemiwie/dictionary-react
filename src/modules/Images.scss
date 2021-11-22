@@ -1,0 +1,10 @@
+@use '../styles/variables' as var;
+
+.Images {
+	display: flex;
+	flex-wrap: wrap;
+	.Figure {
+		margin: 0;
+		padding: 0.5rem;
+	}
+}

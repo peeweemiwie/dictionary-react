@@ -7,25 +7,42 @@ import './Dictionary.scss';
 const Dictionary = (props) => {
 	const [keyword, setKeyword] = useState(props.defaultKeyword);
 	const [data, setData] = useState(null);
+	const [photoArray, setPhotoArray] = useState(null);
 	const [loaded, setLoaded] = useState(false);
 	const [focus, setFocus] = useState(false);
 
-	const handleResponse = (response) => {
+	const handleDictionaryResponse = (response) => {
+		// console.log(response);
 		setData(response.data[0]);
 	};
 
-	const handleFocus = () => {
+	const handleImageResponse = (response) => {
+		setPhotoArray(response.data.photos);
+	};
+
+	const handleInputFocus = () => {
 		setFocus(true);
 	};
 
-	const sendRequest = () => {
+	const sendDictionaryRequest = () => {
 		// documentation: https://dictionaryapi.dev/
 		const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-		axios.get(apiUrl).then(handleResponse);
+		axios.get(apiUrl).then(handleDictionaryResponse);
 	};
+
+	const sendImageRequest = () => {
+		// documentation: https://www.pexels.com/api/documentation/
+		const pexelApiKey =
+			'563492ad6f91700001000001513e63f102864b409905ee9db0684aae';
+		const apiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=20`;
+		const authorization = { Authorization: `Bearer ${pexelApiKey}` };
+		axios.get(apiUrl, { headers: authorization }).then(handleImageResponse);
+	};
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		sendRequest();
+		sendDictionaryRequest();
+		sendImageRequest();
 	};
 
 	const handleKeywordChange = (event) => {
@@ -34,7 +51,8 @@ const Dictionary = (props) => {
 
 	const load = () => {
 		setLoaded(true);
-		sendRequest();
+		sendDictionaryRequest();
+		sendImageRequest();
 	};
 
 	if (loaded) {
@@ -55,12 +73,14 @@ const Dictionary = (props) => {
 							type='search'
 							defaultValue={props.defaultKeyword}
 							onChange={handleKeywordChange}
-							onFocus={handleFocus}
+							onFocus={handleInputFocus}
 						/>
 					</div>
 					<span className='icon material-icons-outlined'>search</span>
 				</form>
-				{data && <Results data={data} />}
+				{data !== null && photoArray !== null && (
+					<Results data={data} photoArray={photoArray} />
+				)}
 			</div>
 		);
 	} else {
