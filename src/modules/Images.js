@@ -17,7 +17,6 @@ const Images = (props) => {
 		props.onReceiveLargeImg(imgData);
 	}, [imgData]);
 
-	// const photoArray = props.photoArray;
 	const photos = props.photoArray.map((photo) => (
 		<Figure
 			key={photo.id}

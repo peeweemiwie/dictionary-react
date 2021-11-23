@@ -34,8 +34,10 @@ const Results = (props) => {
 					keyword={data.word}
 				/>
 			)}
-			<h2 className='searched-word'>{data.word}</h2>
-			{phonetics && <Phonetics data={phonetics} />}
+			<div className='border'>
+				<h2 className='searched-word'>{data.word}</h2>
+				{phonetics && <Phonetics data={phonetics} />}
+			</div>
 			<Nav onReceiveTabChange={changeDataToShow} />
 			{dataToShow === 'definition' ? (
 				<Meaning array={data.meanings} />

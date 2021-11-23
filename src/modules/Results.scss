@@ -7,4 +7,9 @@
 		font-size: var.$font-size-lg;
 		padding-left: 1rem;
 	}
+	.border {
+		border: 1px solid var.$gray;
+		border-radius: var.$lg;
+		margin: 1rem;
+	}
 }

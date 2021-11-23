@@ -12,9 +12,11 @@ const Nav = (props) => {
 				: event.target.parentElement.value;
 		setDataToShow(value);
 	};
+
 	useEffect(() => {
 		props.onReceiveTabChange(dataToShow);
 	}, [dataToShow]);
+
 	return (
 		<nav className='Nav'>
 			<button
