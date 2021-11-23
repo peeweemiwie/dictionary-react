@@ -34,14 +34,19 @@
 		}
 		.btn-primary {
 			background-color: var.$primary;
+			border: 3px solid transparent;
 			border-radius: var.$lg;
+			cursor: pointer;
 			color: var.$white;
 			margin-left: 1rem;
 			padding: 0.5rem 1rem;
 			text-decoration: none;
+			transition: border 100ms ease-in-out;
+			&:hover {
+				border-color: var.$white;
+			}
 			&.btn-close {
 				align-items: center;
-				border: 0;
 				border-radius: 50%;
 				display: flex;
 				height: 5.4rem;

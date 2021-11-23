@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Figure from './Figure';
+
 import './Images.scss';
 
 const Images = (props) => {
@@ -15,11 +17,12 @@ const Images = (props) => {
 
 	useEffect(() => {
 		props.onReceiveLargeImg(imgData);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [imgData]);
 
 	const photos = props.photoArray.map((photo) => (
 		<Figure
-			key={photo.id}
+			key={uuidv4()}
 			clickEvent={handleClick}
 			src={photo.src.small}
 			srcLarge={photo.src.large}

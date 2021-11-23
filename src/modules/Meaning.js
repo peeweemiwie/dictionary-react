@@ -7,9 +7,7 @@ const Meaning = (props) => {
 		return (
 			<div key={uuidv4()} className='Meaning container'>
 				<div className='part-of-speech'>{meaning.partOfSpeech}</div>
-				{meaning.definitions.map((definition, index) => {
-					return <Definition index={index} definition={definition} />;
-				})}
+				<Definition definitions={meaning.definitions} />
 			</div>
 		);
 	});

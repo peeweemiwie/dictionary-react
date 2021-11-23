@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const Figure = (props) => {
 	return (
-		<figure className='Figure' key={Math.random()} onClick={props.clickEvent}>
+		<figure className='Figure' key={uuidv4()} onClick={props.clickEvent}>
 			<img
 				className='img'
 				src={props.src}

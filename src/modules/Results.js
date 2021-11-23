@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Meaning from './Meaning';
 import Phonetics from './Phonetics';
 import Images from './Images';
-// import Figure from './Figure';
 import Nav from './Nav';
 import Backdrop from './Backdrop';
 import './Results.scss';

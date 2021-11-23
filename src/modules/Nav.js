@@ -15,6 +15,7 @@ const Nav = (props) => {
 
 	useEffect(() => {
 		props.onReceiveTabChange(dataToShow);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dataToShow]);
 
 	return (
