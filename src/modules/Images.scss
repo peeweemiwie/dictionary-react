@@ -1,6 +1,7 @@
 @use '../styles/variables' as var;
 
 .Images {
+	background-color: var.$dark-gray;
 	display: flex;
 	flex-wrap: wrap;
 	.Figure {

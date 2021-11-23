@@ -1,6 +1,6 @@
 const Figure = (props) => {
 	return (
-		<figure className='Figure' key={props.key} onClick={props.clickEvent}>
+		<figure className='Figure' key={Math.random()} onClick={props.clickEvent}>
 			<img
 				className='img'
 				src={props.src}

@@ -3,7 +3,7 @@ import './Phonetics.scss';
 const Phonetics = (props) => {
 	return props.data.map((item, index) => {
 		return (
-			<div className='Phonetics'>
+			<div className='Phonetics' key={index + item.text}>
 				<div className='text'>
 					<span>[</span>
 					{item.text}

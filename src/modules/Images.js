@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Figure from './Figure';
 import './Images.scss';
 
 const Images = (props) => {
 	const [imgData, setImgData] = useState(null);
+
 	const handleClick = (event) => {
 		setImgData({
 			imgLargeSrc: event.target.getAttribute('data-src-large'),
 			originalUrl: event.target.getAttribute('data-url'),
 			alt: event.target.alt,
 		});
-		props.onReceiveLargeImg(imgData);
 	};
-	const photoArray = props.photoArray;
-	const photos = photoArray.map((photo) => (
+
+	useEffect(() => {
+		props.onReceiveLargeImg(imgData);
+	}, [imgData]);
+
+	// const photoArray = props.photoArray;
+	const photos = props.photoArray.map((photo) => (
 		<Figure
 			key={photo.id}
 			clickEvent={handleClick}

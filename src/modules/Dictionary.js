@@ -12,7 +12,6 @@ const Dictionary = (props) => {
 	const [focus, setFocus] = useState(false);
 
 	const handleDictionaryResponse = (response) => {
-		// console.log(response);
 		setData(response.data[0]);
 	};
 
