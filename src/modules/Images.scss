@@ -1,0 +1,23 @@
+@use '../styles/variables' as var;
+
+.Images {
+	background-color: var.$body-bg;
+	// background-color: var.$dark-gray;
+	display: flex;
+	flex-wrap: wrap;
+	.Figure {
+		margin: 0;
+		padding: 0.5rem;
+		.img {
+			border: 2px solid transparent;
+			border-radius: 0;
+			cursor: pointer;
+			transition: border-color 200ms ease-in-out,
+				border-radius 200ms ease-in-out;
+			&:hover {
+				border-color: var.$primary;
+				border-radius: var.$lg;
+			}
+		}
+	}
+}

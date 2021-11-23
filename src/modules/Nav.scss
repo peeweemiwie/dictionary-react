@@ -1,0 +1,21 @@
+@use '../styles/variables' as var;
+
+.Nav {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 2px;
+	.button {
+		background-color: var.$gray;
+		border-bottom: 3px solid transparent;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		transition: border-bottom-color 100ms;
+		&[data-active='true'] {
+			border-bottom-color: var.$primary;
+		}
+		span {
+			align-self: center;
+		}
+	}
+}
