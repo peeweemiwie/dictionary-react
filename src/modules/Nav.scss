@@ -9,12 +9,19 @@
 		background-color: rgba(var.$gray, 0.2);
 		border-bottom: 3px solid transparent;
 		color: var.$light-gray;
+		cursor: pointer;
 		display: flex;
 		flex-direction: column;
 		padding-top: 1rem;
-		transition: border-bottom-color 100ms;
+		transition: border-bottom-color 100ms ease-in-out, color 100ms ease-in-out;
 		&[data-active='true'] {
 			border-bottom-color: var.$primary;
+			.material-icons-outlined,
+			.title {
+				color: var.$primary;
+			}
+		}
+		&:hover {
 			.material-icons-outlined,
 			.title {
 				color: var.$primary;

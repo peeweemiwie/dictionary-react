@@ -5,7 +5,7 @@ import './Definition.scss';
 
 const Definition = (props) => {
 	const handleReceivedWord = (word) => {
-		props.onReceiveSynonym(word);
+		props.handleReceivedWord(word);
 	};
 	return props.definitions.map((definition) => {
 		return (
@@ -17,11 +17,14 @@ const Definition = (props) => {
 				{definition.synonyms.length > 0 && (
 					<Synonyms
 						array={definition.synonyms}
-						onReceiveSynonym={handleReceivedWord}
+						handleReceivedWord={handleReceivedWord}
 					/>
 				)}
 				{definition.antonyms.length > 0 && (
-					<Antonyms array={definition.antonyms} />
+					<Antonyms
+						array={definition.antonyms}
+						handleReceivedWord={handleReceivedWord}
+					/>
 				)}
 				{definition.example && (
 					<dl className='dl example'>

@@ -4,7 +4,7 @@ import './Meaning.scss';
 
 const Meaning = (props) => {
 	const handleReceivedWord = (word) => {
-		props.onReceiveSynonym(word);
+		props.handleReceivedWord(word);
 	};
 	return props.array.map((meaning) => {
 		return (
@@ -12,7 +12,7 @@ const Meaning = (props) => {
 				<div className='part-of-speech'>{meaning.partOfSpeech}</div>
 				<Definition
 					definitions={meaning.definitions}
-					onReceiveSynonym={handleReceivedWord}
+					handleReceivedWord={handleReceivedWord}
 				/>
 			</div>
 		);

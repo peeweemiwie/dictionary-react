@@ -25,7 +25,7 @@ const Results = (props) => {
 	};
 
 	const handleReceivedWord = (word) => {
-		props.onReceiveSynonym(word);
+		props.handleReceivedWord(word);
 	};
 
 	return (
@@ -43,7 +43,10 @@ const Results = (props) => {
 			</div>
 			<Nav onReceiveTabChange={changeDataToShow} />
 			{dataToShow === 'definition' ? (
-				<Meaning array={data.meanings} onReceiveSynonym={handleReceivedWord} />
+				<Meaning
+					array={data.meanings}
+					handleReceivedWord={handleReceivedWord}
+				/>
 			) : (
 				<Images
 					photoArray={props.photoArray}
