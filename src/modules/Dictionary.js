@@ -99,7 +99,7 @@ const Dictionary = (props) => {
 		);
 	} else {
 		load();
-		return 'Loading...';
+		return <p>Loading...</p>;
 	}
 };
 

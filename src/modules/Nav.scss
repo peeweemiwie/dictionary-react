@@ -4,15 +4,21 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 2px;
+	margin-bottom: 0.5rem;
 	.button {
-		background-color: var.$gray;
+		background-color: rgba(var.$gray, 0.2);
 		border-bottom: 3px solid transparent;
-		color: white;
+		color: var.$light-gray;
 		display: flex;
 		flex-direction: column;
+		padding-top: 1rem;
 		transition: border-bottom-color 100ms;
 		&[data-active='true'] {
 			border-bottom-color: var.$primary;
+			.material-icons-outlined,
+			.title {
+				color: var.$primary;
+			}
 		}
 		span {
 			align-self: center;
