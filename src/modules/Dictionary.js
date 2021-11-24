@@ -1,8 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Results from './Results';
 import 'material-icons/iconfont/material-icons.css';
 import './Dictionary.scss';
+// import RequestDictionary from './RequestDictionary';
 
 const Dictionary = (props) => {
 	const [keyword, setKeyword] = useState(props.defaultKeyword);
@@ -39,7 +40,7 @@ const Dictionary = (props) => {
 	};
 
 	const handleSubmit = (event) => {
-		event.preventDefault();
+		if (event) event.preventDefault();
 		sendDictionaryRequest();
 		sendImageRequest();
 	};
@@ -49,10 +50,19 @@ const Dictionary = (props) => {
 	};
 
 	const load = () => {
-		setLoaded(true);
 		sendDictionaryRequest();
 		sendImageRequest();
+		setLoaded(true);
 	};
+
+	const handleReceivedWord = (word) => {
+		setKeyword(word);
+	};
+
+	useEffect(() => {
+		handleSubmit();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [keyword]);
 
 	if (loaded) {
 		return (
@@ -70,21 +80,25 @@ const Dictionary = (props) => {
 							className='input-search'
 							id='input-search'
 							type='search'
-							defaultValue={props.defaultKeyword}
 							onChange={handleKeywordChange}
 							onFocus={handleInputFocus}
+							value={keyword}
 						/>
 					</div>
 					<span className='icon material-icons-outlined'>search</span>
 				</form>
 				{data !== null && photoArray !== null && (
-					<Results data={data} photoArray={photoArray} />
+					<Results
+						data={data}
+						photoArray={photoArray}
+						onReceiveSynonym={handleReceivedWord}
+					/>
 				)}
 			</div>
 		);
 	} else {
 		load();
-		return 'Loading...';
+		return <p>Loading...</p>;
 	}
 };
 

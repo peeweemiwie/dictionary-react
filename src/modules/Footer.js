@@ -1,7 +1,7 @@
 const Footer = () => {
 	return (
 		<footer className='Footer'>
-			Coded by{' '}
+			Design + coded by{' '}
 			<a href='https://miwayagi.com/' target='_blank' rel='noopener noreferrer'>
 				Miwa Kaur
 			</a>
