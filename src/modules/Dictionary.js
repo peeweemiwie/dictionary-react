@@ -91,7 +91,7 @@ const Dictionary = (props) => {
 					<Results
 						data={data}
 						photoArray={photoArray}
-						onReceiveSynonym={handleReceivedWord}
+						handleReceivedWord={handleReceivedWord}
 					/>
 				)}
 			</div>

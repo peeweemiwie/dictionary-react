@@ -1,0 +1,24 @@
+@use '../styles/variables' as var;
+
+.Antonyms-Synonyms {
+	.word {
+		background-color: transparent;
+		border-radius: var.$xl;
+		cursor: pointer;
+		margin: 0.5rem;
+		padding: 0 1rem;
+		transition: background-color 200ms ease-in-out;
+		&.synonym {
+			border: 1px solid var.$primary;
+			&:hover {
+				background-color: var.$primary;
+			}
+		}
+		&.antonym {
+			border: 1px solid var.$success;
+			&:hover {
+				background-color: var.$success;
+			}
+		}
+	}
+}

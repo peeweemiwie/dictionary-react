@@ -23,15 +23,4 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.word {
-		border-radius: var.$xl;
-		padding: 0 1rem;
-		margin: 0.5rem;
-		&.synonym {
-			border: 1px solid var.$primary;
-		}
-		&.antonym {
-			border: 1px solid var.$success;
-		}
-	}
 }
