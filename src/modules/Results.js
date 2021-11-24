@@ -24,6 +24,10 @@ const Results = (props) => {
 		setImgLarge(null);
 	};
 
+	const handleReceivedWord = (word) => {
+		props.onReceiveSynonym(word);
+	};
+
 	return (
 		<main className='Results'>
 			{imgLarge && (
@@ -39,7 +43,7 @@ const Results = (props) => {
 			</div>
 			<Nav onReceiveTabChange={changeDataToShow} />
 			{dataToShow === 'definition' ? (
-				<Meaning array={data.meanings} />
+				<Meaning array={data.meanings} onReceiveSynonym={handleReceivedWord} />
 			) : (
 				<Images
 					photoArray={props.photoArray}

@@ -1,6 +1,7 @@
-import './App.scss';
 import Dictionary from './modules/Dictionary';
 import Footer from './modules/Footer';
+import './App.scss';
+
 function App() {
 	return (
 		<div className='App'>

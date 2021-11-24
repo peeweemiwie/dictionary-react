@@ -4,6 +4,9 @@ import { v4 as uuidv4 } from 'uuid';
 import './Definition.scss';
 
 const Definition = (props) => {
+	const handleReceivedWord = (word) => {
+		props.onReceiveSynonym(word);
+	};
 	return props.definitions.map((definition) => {
 		return (
 			<section key={uuidv4()} className='Definition container'>
@@ -12,7 +15,10 @@ const Definition = (props) => {
 					<dd className='dd'>{definition.definition}</dd>
 				</dl>
 				{definition.synonyms.length > 0 && (
-					<Synonyms array={definition.synonyms} />
+					<Synonyms
+						array={definition.synonyms}
+						onReceiveSynonym={handleReceivedWord}
+					/>
 				)}
 				{definition.antonyms.length > 0 && (
 					<Antonyms array={definition.antonyms} />
